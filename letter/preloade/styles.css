@@ -20,6 +20,19 @@
     font-family: "Playwright USA Traditional", serif;
 }
 
+@media (max-width: 768px) { 
+    .wrapper {
+        width: 90%; /* Riduci la larghezza per schermi piccoli */
+        padding: 20px;
+    }
+
+    .input-box input {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+
 /* Struttura principale */
 body {
     display: flex;
