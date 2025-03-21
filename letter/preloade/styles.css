@@ -1,0 +1,126 @@
+@font-face {
+    font-family: "Cattie Regular";
+    src: url("/fonts/Cattie-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cattie-regular {
+    font-family: "Cattie Regular", serif;
+}
+
+@font-face {
+    font-family: "Playwright USA Traditional";
+    src: url("/fonts/PlaywriteUSTrad-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+.playwright-font {
+    font-family: "Playwright USA Traditional", serif;
+}
+
+/* Struttura principale */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: pink;
+    margin: 0;
+}
+
+/* Testo */
+.text {
+    font-family: "Cattie Regular";
+    font-size: 35px;
+    color: #A36B6B;
+    text-align: center; /* Centra il testo */
+    margin-bottom: 20px; /* Spazio tra il testo e le immagini */
+}
+
+/* Container immagini */
+.container-img {
+    display: flex;
+    gap: 20px; /* Spazio tra le immagini */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Immagini */
+.image {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+}
+
+.img1 {
+    background-image: url('/images/io.jpg');
+}
+
+.img2 {
+    background-image: url('/images/lei.jpg');
+}
+
+.container-button {
+    margin-top: 40px; /* Aumenta lo spazio sopra il bottone */
+}
+
+/* Bottone */
+.animated-button {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff416c);
+    margin-top: 50px; /* Aumenta lo spazio sopra il bottone */
+    font-family: "Playwright USA Traditional";
+    border: 4px solid #ffffff;
+    box-shadow: 
+        0px 0px 0px 4px #ff416c,
+        0px 0px 0px 8px rgba(255, 65, 108, 0.5);
+}
+
+
+/* Minimo indispensabile per i petali */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #ff66b2;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
