@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Great Vibes";
+  src: url("/fonts/GreatVibes-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.great-font {
+  font-family: "Great Vibes", serif;
+}
+
+@font-face {
+  font-family: "Playwright USA Traditional";
+  src: url("fonts/PlaywriteUSTrad-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.playwright-font {
+  font-family: "Playwright USA Traditional", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f9e5e5; /* Sfondo rosa chiaro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+.envelope {
+  width: 200px;
+  height: 150px;
+  background-color: #f0a1a1; /* Colore busta */
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.envelope:hover {
+  transform: scale(1.1);
+}
+
+/* Effetto petali */
+.petal {
+  position: absolute;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #ff66b2;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+.text {
+  position: absolute;
+  top: calc(50% + 100px); /* Sposta il testo sotto la busta */
+  text-align: center;
+  font-size: 30px;
+  color: #d14e76; /* Un rosa più scuro per visibilità */
+  font-weight: bold;
+  font-family: "Great Vibes";
+}
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+

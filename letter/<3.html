@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busta Interattiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sky"></div> <!-- Effetto petali -->
+    
+    <div class="container">
+        <div class="envelope" id="envelope"></div>
+        <div class="text">Heyyy, apri la busta<3</div> <!-- Testo spostato dentro container -->
+    </div>
+
+    <script>
+        document.getElementById("envelope").addEventListener("click", function() {
+            window.location.href = "preloade/preload.html"; // Reindirizza alla seconda pagina
+        });
+
+        // Funzione per creare petali che cadono
+        function createPetal() {
+            const petal = document.createElement("div");
+            petal.classList.add("petal");
+            petal.style.left = Math.random() * 100 + "vw";
+            petal.style.animationDuration = Math.random() * 3 + 2 + "s"; // Durata random tra 2 e 5 secondi
+            document.body.appendChild(petal);
+
+            // Rimuove il petalo dopo che è caduto
+            setTimeout(() => {
+                petal.remove();
+            }, 5000);
+        }
+
+        // Genera petali a intervalli regolari
+        setInterval(createPetal, 300);
+    </script>
+</body>
+</html>
